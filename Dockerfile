@@ -1,7 +1,7 @@
 FROM docker:20.10.3
 
 ENV JQ_VERSION='1.5'
-RUN apk add --no-cache bash curl jq python3 py3-pip npm git gnupg && \
+RUN apk add --no-cache bash curl jq python3 py3-pip nodejs=14.15.4-r0 git gnupg && \
     pip install awscli && \
     wget --no-check-certificate https://raw.githubusercontent.com/stedolan/jq/master/sig/jq-release.key -O /tmp/jq-release.key && \
     wget --no-check-certificate https://raw.githubusercontent.com/stedolan/jq/master/sig/v${JQ_VERSION}/jq-linux64.asc -O /tmp/jq-linux64.asc && \
@@ -13,5 +13,5 @@ RUN apk add --no-cache bash curl jq python3 py3-pip npm git gnupg && \
     rm -f /tmp/jq-release.key && \
     rm -f /tmp/jq-linux64.asc && \
     rm -f /tmp/jq-linux64 && \
-    curl https://raw.githubusercontent.com/silinternational/ecs-deploy/3.7.0/ecs-deploy | tee /usr/bin/ecs-deploy && \
+    curl https://raw.githubusercontent.com/silinternational/ecs-deploy/3.9.1/ecs-deploy | tee /usr/bin/ecs-deploy && \
     chmod +x /usr/bin/ecs-deploy
