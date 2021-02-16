@@ -1,4 +1,4 @@
-FROM docker:19.03.8
+FROM docker:20.10.3
 
 ENV JQ_VERSION='1.5'
 RUN apk add --no-cache curl jq python py-pip npm git gnupg && \
