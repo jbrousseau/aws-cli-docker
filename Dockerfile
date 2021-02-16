@@ -1,7 +1,7 @@
 FROM docker:20.10.3
 
 ENV JQ_VERSION='1.5'
-RUN apk add --no-cache bash curl jq python3 py3-pip nodejs=14.15.4-r0 git gnupg && \
+RUN apk add --no-cache bash curl jq python3 py3-pip nodejs=14.15.4-r0 npm git gnupg && \
     pip install awscli && \
     wget --no-check-certificate https://raw.githubusercontent.com/stedolan/jq/master/sig/jq-release.key -O /tmp/jq-release.key && \
     wget --no-check-certificate https://raw.githubusercontent.com/stedolan/jq/master/sig/v${JQ_VERSION}/jq-linux64.asc -O /tmp/jq-linux64.asc && \
