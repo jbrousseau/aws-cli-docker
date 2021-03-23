@@ -13,5 +13,6 @@ RUN apk add --no-cache bash curl jq python3 py3-pip nodejs=14.15.4-r0 npm git gn
     rm -f /tmp/jq-release.key && \
     rm -f /tmp/jq-linux64.asc && \
     rm -f /tmp/jq-linux64 && \
+    npm install --global yarn && \
     curl https://raw.githubusercontent.com/silinternational/ecs-deploy/3.9.1/ecs-deploy | tee /usr/bin/ecs-deploy && \
     chmod +x /usr/bin/ecs-deploy
